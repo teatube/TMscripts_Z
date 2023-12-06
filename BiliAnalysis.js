@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BiliAnalysis（视频/直播间链接解析，顶栏会多出一个蓝色按钮）
-// @namespace    https://bbs.tampermonkey.net.cn/
-// @version      0.1.26
+// @namespace    https://github.com/26F-Studio
+// @version      1.0
 // @description  基于Miro_355的b站解析脚本(https://b23.tv/BV1AP411x7YW)，由-茶叶子-和MrZ改进
 // @author       Miro(https://vrchat.com/home/user/usr_20b8e0e4-9e16-406a-a61d-8a627ec1a2e3), -茶叶子-(https://vrchat.com/home/user/usr_411b8ebe-a9a9-4987-a4c8-5e17c898a311), MrZ_26(https://vrchat.com/home/user/usr_90460f0c-be4c-4f13-a828-577f40ab70e1)
 // @downloadURL  https://raw.githubusercontent.com/mrz626/TMScripts_Z/main/BiliAnalysis.js
