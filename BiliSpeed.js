@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         BiliSpeed
+// @name         BiliSpeed（按+-调整B站视频速度）
 // @namespace    http://tampermonkey.net/
 // @version      1.1
-// @description  按+=键调整B站视频速度
+// @description  Eilen编写，MrZ优化
 // @author       MrZ https://github.com/MrZ626, Eilen https://github.com/EilenC
 // @downloadURL  https://raw.githubusercontent.com/MrZ626/TMScripts_Z/main/BiliSpeed.js
 // @updateURL    https://raw.githubusercontent.com/MrZ626/TMScripts_Z/main/BiliSpeed.js
