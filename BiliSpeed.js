@@ -4,6 +4,8 @@
 // @version      1.1
 // @description  按+=键调整B站视频速度
 // @author       MrZ https://github.com/MrZ626, Eilen https://github.com/EilenC
+// @downloadURL  https://raw.githubusercontent.com/MrZ626/TMScripts_Z/main/BiliSpeed.js
+// @updateURL    https://raw.githubusercontent.com/MrZ626/TMScripts_Z/main/BiliSpeed.js
 // @match        https://www.bilibili.com/*
 // ==/UserScript==
 
