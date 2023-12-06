@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         BiliBiliVideoSpeed
+// @name         BiliSpeed
 // @namespace    http://tampermonkey.net/
 // @version      1.1
 // @description  按+=键调整B站视频速度
