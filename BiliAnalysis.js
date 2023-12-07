@@ -11,7 +11,6 @@
 // @match        https://www.bilibili.com/festival/*
 // @match        https://live.bilibili.com/*
 // @grant        GM_xmlhttpRequest
-// @run-at       document-idle
 // ==/UserScript==
 
 'use strict';
@@ -33,19 +32,15 @@ function createButton(isMain, text, clickHandler) {
 }
 
 if (url.startsWith("https://w")) { // 视频解析
-
+    // 创建按钮
     var button = createButton(true, "本地解析", clickButton);
-
-    // 尝试放置按钮
-    function attemptAddButton() {
-        var targetPlace = document.getElementsByClassName('left-entry')[0];
-        if (!targetPlace) targetPlace = document.getElementsByClassName('nav-link-ul')[0];
-        // if (targetPlace.getElementsByName('BiliAnalysisButton')[0]) return;
-        targetPlace?.appendChild(button);
-    }
-    // attemptAddButton();
-    setTimeout(attemptAddButton, 6200);
-    // for (var i = 1; i <= 5; i++) setTimeout(attemptAddButton, 1000 * i);
+    button.style.top = "55px";
+    button.style.left = "0px";
+    button.style.width = "80px";
+    button.style.height = "30px";
+    button.style.zIndex = "999";
+    button.style.position = "fixed";
+    $("body").append(button);
 
     // 解析操作
     function clickButton() {
@@ -71,16 +66,13 @@ if (url.startsWith("https://w")) { // 视频解析
                 var json = JSON.parse(httpRequest.responseText);
                 var cid = json.data[P1 - 1].cid;
                 console.log(json.data[P1 - 1].cid);
+
+                // 获取视频链接
                 var httpRequest1 = new XMLHttpRequest();
                 httpRequest1.open('GET', 'https://api.bilibili.com/x/player/playurl?bvid=' + bvid + '&cid=' + cid + '&qn=116&type=&otype=json&platform=html5&high_quality=1', true);
                 httpRequest1.withCredentials = true;
                 httpRequest1.send();
                 httpRequest1.onreadystatechange = function () {
-                    if (httpRequest1.readyState == 4 && httpRequest1.status == 200) {
-                        var json = JSON.parse(httpRequest1.responseText);
-                        navigator.clipboard.writeText(json.data.durl[0].url).catch(e => console.error(e));
-                        console.log(json.data.durl[0].url);
-                    }
                     button.textContent = "解析成功";
                     button.style.background = "#00ECAE";
                     setTimeout(function () {
@@ -145,7 +137,7 @@ else { // 直播间解析
                                         toggleButton.textContent = "复制成功";
                                         toggleButton.style.background = "#00ECAE";
                                         setTimeout(function () {
-                                            if (toggleButton.textContent==="复制成功") toggleButton.textContent = "收回解析";
+                                            if (toggleButton.textContent == "复制成功") toggleButton.textContent = "收回解析";
                                             toggleButton.style.background = "#00AEEC";
                                         }, 2600);
                                     }));
